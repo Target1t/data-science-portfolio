@@ -1,0 +1,13 @@
+{
+  "name": "phase9_optimized_v8_component_quantity_ensemble",
+  "base_config": "configs/optimized_v4.json",
+  "multiscale_config": "configs/optimized_v7_multiscale.json",
+  "occurrence_source": "base_v4",
+  "base_quantity_weight": 0.75,
+  "multiscale_quantity_weight": 0.25,
+  "gate_source": "base_v4_quadrant_thresholds",
+  "selection_constraints": {
+    "monthly_mean_ratio_floor": 0.82,
+    "required_directional_improvement_grids": ["monthly_10", "shifted_10"]
+  }
+}

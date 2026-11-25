@@ -1,0 +1,11 @@
+{
+  "name":"phase9_optimized_v7_multiscale","lookback_days":90,"feature_windows":[7,14,30,60,90],"forecast_days":30,"purge_days":30,"training_step_days":15,
+  "anchors":["2025-10-12","2025-11-12","2025-12-12","2026-01-12","2026-02-12","2026-03-12","2026-04-12","2026-05-12","2026-06-12","2026-07-12"],
+  "gate_threshold":0.325,"quadrant_thresholds":{"repl0_fut0":0.325,"repl0_fut1":0.245,"repl1_fut0":0.355,"repl1_fut1":0.285},
+  "quantity_scale":1.0395,"probability_power":0.0,"primary_weight":0.5,"secondary_min_primary_qty":5.0,
+  "random_state":2028,"learning_rate":0.04,"num_leaves":31,"n_estimators":600,"min_child_samples":40,"subsample":0.8,"colsample_bytree":0.85,
+  "regression_objective":"regression_l1","secondary_regression_objective":"regression","target_transform":"none",
+  "engineered_features":true,"operational_features":false,"hierarchical_features":true,"sibling_features":true,"sibling_features_classifier_only":true,
+  "include_categorical_features":true,"categorical_features":["category","sub_category","season","band","series","size_id","color_id"],
+  "exclude_features":["sku_id","style_id"],"skc_bands":[0.0,3.0,10.0],"skc_factor_min":0.9,"skc_factor_max":1.1
+}

@@ -1,0 +1,6 @@
+{
+  "scalar_reference_max_error": 2.220446049250313e-16,
+  "monte_carlo_max_error": 0.00010039868495909099,
+  "individual_reference_max_error": 0.0010647365053008673,
+  "checks_passed": true
+}

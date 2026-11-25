@@ -1,0 +1,131 @@
+---
+title: "STA138 Project"
+author: "Haifei Yang"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load the data and transform the data into model-ready format
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(scales)
+data <- read.csv("Byssinosis.csv")
+data$Total <- data$Byssinosis+data$Non.Byssinosis
+data$Rate <- data$Byssinosis/data$Total
+data$Workspace <- factor(data$Workspace, levels = c(1, 2, 3), 
+                         labels = c("1 (Most Dusty)", "2 (Less Dusty)", "3 (Least Dusty)"))
+data$Employment <- factor(data$Employment, levels = c("<10", "10~19", ">=20"))
+data$Smoking <- factor(data$Smoking, levels = c("No", "Yes"))
+data$Sex <- factor(data$Sex)
+```
+
+## Exploratory Data Analysis
+
+I first conduct exploratory data analysis.
+
+I define prevalence rate as $Prevalence=\frac{\text{Number of Byssinosis patients}}{\text{Total number of employees}}$
+
+Firstly, I find that the most dusty workplace has a significantly high prevalence rate of Byssinosis of 15.7%, which indicates workplace dustiness may be relevant to Byssinosis.
+
+```{r}
+agg_ws <- data %>%
+  group_by(Workspace) %>%
+  summarise(Byssinosis = sum(Byssinosis), Total = sum(Total)) %>%
+  mutate(Rate = Byssinosis / Total)
+
+p1 <- ggplot(agg_ws, aes(x = Workspace, y = Rate, fill = Workspace)) +
+  geom_bar(stat = "identity", width = 0.6, color = "black") +
+  geom_text(aes(label = percent(Rate, accuracy = 0.1)), vjust = -0.5, size = 5) +
+  scale_fill_brewer(palette = "OrRd", direction = -1) + 
+  labs(title = "1. Dustiness & Disease Prevalence",
+       y = "Prevalence Rate", x = "Workspace Dustiness") +
+  theme_classic() +
+  theme(legend.position = "none")
+print(p1)
+```
+
+Then, I explore the connection between duration of time in dusty environment and falling ill. We discover that in the most dusty workplace, the prevalence rate spikes significantly as the employment duration increases while in less dusty places the spike is hardly significant.
+
+```{r}
+agg_emp_ws <- data %>%
+  group_by(Employment, Workspace) %>%
+  summarise(Byssinosis = sum(Byssinosis), Total = sum(Total)) %>%
+  mutate(Rate = Byssinosis / Total)
+
+p2 <- ggplot(agg_emp_ws, aes(x = Employment, y = Rate, group = Workspace, color = Workspace)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 4) +
+  geom_text(aes(label = percent(Rate, accuracy = 0.1)), vjust = -1, size = 3.5, show.legend = FALSE) +
+  scale_color_brewer(palette = "OrRd", direction = -1) +
+  labs(title = "2. Interaction of Employement years and Byssinosis",
+       y = "Prevalence Rate", x = "Years of Employment") +
+  theme_bw()
+print(p2)
+```
+
+I further explore the interaction between smoking and prevalence.
+
+Not only does the most dusty workplace generate most of the Byssinosis cases. In all 3 dustiness categories, smoking patients accounts for at least 50% of all patients.
+
+```{r}
+agg_cases <- data %>%
+  group_by(Workspace, Smoking) %>%
+  summarise(Cases = sum(Byssinosis), .groups = 'drop')
+
+p3 <- ggplot(agg_cases, aes(x = Workspace, y = Cases, fill = Smoking)) +
+  geom_bar(stat = "identity", position = "stack", width = 0.6) +
+  geom_text(aes(label = Cases), position = position_stack(vjust = 0.5), color = "white", size = 4) +
+  stat_summary(fun = sum, aes(label = ..y.., group = Workspace), geom = "text", vjust = -0.5, size = 5) +
+  scale_fill_manual(values = c("No" = "#a6cee3", "Yes" = "#e31a1c")) +
+  labs(title = "3. Count of Cases by Workspace",
+       y = "Number of Byssinosis Cases", x = "Workspace") +
+  theme_classic() +
+  ylim(0, 120)
+print(p3)
+```
+
+## Model fitting
+
+I construct GLM using the aggregated binomial data and perform two-way model selection with BIC.
+
+I choose BIC over AIC as we have 4 categorical features and BIC will help eliminate those contribute little to predicting Byssinosis.
+
+```{r}
+y <- cbind(data$Byssinosis, data$Non.Byssinosis)
+full_model <- glm(y ~ Workspace * (Employment + Smoking + Sex + Race), 
+                  family = binomial(link = "logit"), data = data)
+model_bic <- step(full_model, direction = "both", k = log(nrow(data)), trace = TRUE)
+
+summary(model_bic)
+```
+
+From the final summary of the model, I can conclude that workplace dustiness contributes to the chance of Byssinosis.
+
+The factor of less and least dusty workplace has negative coefficients(-2.5494 and -2.7173) and extremely small p values, indicating that moving workers from highly dusty workplace to less dusty workplace can significantly reduce the probability of byssinosis.
+
+By examining the OR, we conclude that:
+
+1\. Moving to a less dusty environment (Workspace 2 or 3) is associated with a greater than 90% reduction in the odds of developing the disease (OR $\approx$ 0.08 and 0.07, respectively).
+
+2\. Smoking and long-term employment ($\ge$ 20 years) are statistically significant factors, but they only increase the odds by approximately 2 times (OR $\approx$ 1.86 and 1.96).
+
+```{r}
+data.frame(OR = exp(coef(model_bic)))
+```
+
+## Appendix on AI prompts
+
+I use AI for generating the code for the nice plots above.
+
+For Plot1: R code for generating bar plots showing the prevalence rate in different categories of workplace(most/less/least dusty).
+
+For Plot2: R code for generating plots showing how the prevalence rate in different categories of workplace(most/less/least dusty) changes with the duration of work increases from 10\< to 10-19 then to \>20.
+
+For Plot3: R code for generating stacked bar plots showing the number of Byssinosis cases in different categories of workplace(most/less/least dusty), stacked with Smoking/Non-smoking.

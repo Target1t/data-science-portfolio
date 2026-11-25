@@ -1,0 +1,22 @@
+{
+  "train_scenarios": 128,
+  "validation_scenarios": 32,
+  "test_scenarios": 48,
+  "train_horizon": 32,
+  "test_horizon": 60,
+  "population": 1000,
+  "batch": 1024,
+  "epochs": 100,
+  "finetune_epochs": 45,
+  "seeds": [
+    11,
+    29,
+    47
+  ],
+  "mc_replicates": 1024,
+  "train_seed": 101,
+  "validation_seed": 202,
+  "test_seed": 303,
+  "reference_seed": 404,
+  "switch_time": 20
+}

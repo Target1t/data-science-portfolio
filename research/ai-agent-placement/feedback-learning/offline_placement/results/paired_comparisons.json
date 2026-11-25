@@ -1,0 +1,90 @@
+[
+  {
+    "regime": "original",
+    "budget": 1,
+    "rule": "plugin",
+    "contrast": "flexible minus logistic regret",
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "regime": "original",
+    "budget": 1,
+    "rule": "conservative",
+    "contrast": "flexible minus logistic regret",
+    "mean": 0.012715624999999977,
+    "ci95": [
+      0.0,
+      0.025431249999999954
+    ]
+  },
+  {
+    "regime": "original",
+    "budget": 4,
+    "rule": "plugin",
+    "contrast": "flexible minus logistic regret",
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "regime": "original",
+    "budget": 4,
+    "rule": "conservative",
+    "contrast": "flexible minus logistic regret",
+    "mean": 0.019722916666666673,
+    "ci95": [
+      0.0,
+      0.03944583333333335
+    ]
+  },
+  {
+    "regime": "shape_stress",
+    "budget": 1,
+    "rule": "plugin",
+    "contrast": "flexible minus logistic regret",
+    "mean": 0.015231770833333338,
+    "ci95": [
+      0.0,
+      0.030463541666666677
+    ]
+  },
+  {
+    "regime": "shape_stress",
+    "budget": 1,
+    "rule": "conservative",
+    "contrast": "flexible minus logistic regret",
+    "mean": 0.01712005208333335,
+    "ci95": [
+      -0.04562812499999999,
+      0.10960781250000004
+    ]
+  },
+  {
+    "regime": "shape_stress",
+    "budget": 4,
+    "rule": "plugin",
+    "contrast": "flexible minus logistic regret",
+    "mean": 0.015231770833333338,
+    "ci95": [
+      0.0,
+      0.030463541666666677
+    ]
+  },
+  {
+    "regime": "shape_stress",
+    "budget": 4,
+    "rule": "conservative",
+    "contrast": "flexible minus logistic regret",
+    "mean": 0.005294010416666675,
+    "ci95": [
+      -0.023103385416666664,
+      0.03097708333333335
+    ]
+  }
+]

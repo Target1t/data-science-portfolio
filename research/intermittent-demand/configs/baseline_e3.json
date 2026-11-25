@@ -1,0 +1,19 @@
+{
+  "name": "phase9_research_e3_core",
+  "lookback_days": 90,
+  "forecast_days": 30,
+  "purge_days": 30,
+  "anchors": ["2026-04-12", "2026-05-12", "2026-06-12", "2026-07-12"],
+  "gate_threshold": 0.27,
+  "random_state": 2028,
+  "learning_rate": 0.05,
+  "num_leaves": 63,
+  "n_estimators": 800,
+  "min_child_samples": 20,
+  "subsample": 0.8,
+  "colsample_bytree": 0.8,
+  "exclude_features": ["sku_id", "style_id"],
+  "skc_bands": [0.0, 3.0, 10.0],
+  "skc_factor_min": 0.9,
+  "skc_factor_max": 1.1
+}

@@ -1,0 +1,202 @@
+[
+  {
+    "split": "iid_static",
+    "metric": "scenario_tv",
+    "model": "structured_rollout",
+    "baseline": "no_feedback",
+    "mean_difference": -0.006345979869365692,
+    "ci95_low": -0.008412178605794907,
+    "ci95_high": -0.004669298883527517,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "iid_static",
+    "metric": "regret",
+    "model": "structured_rollout",
+    "baseline": "no_feedback",
+    "mean_difference": -0.002148960819950804,
+    "ci95_low": -0.004044411420468911,
+    "ci95_high": -0.0005882639708342491,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "iid_static",
+    "metric": "scenario_tv",
+    "model": "structured_rollout",
+    "baseline": "direct",
+    "mean_difference": -0.061633091419935226,
+    "ci95_low": -0.07465638965368271,
+    "ci95_high": -0.049767665565013885,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "iid_static",
+    "metric": "regret",
+    "model": "structured_rollout",
+    "baseline": "direct",
+    "mean_difference": -0.10408083699544268,
+    "ci95_low": -0.14275690478006994,
+    "ci95_high": -0.06896084006132902,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "iid_static",
+    "metric": "scenario_tv",
+    "model": "structured_rollout",
+    "baseline": "dense_kernel",
+    "mean_difference": -0.007783138658851385,
+    "ci95_low": -0.009486723691225052,
+    "ci95_high": -0.006234767846763134,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "iid_static",
+    "metric": "regret",
+    "model": "structured_rollout",
+    "baseline": "dense_kernel",
+    "mean_difference": -0.056468124502676464,
+    "ci95_low": -0.07787739847253865,
+    "ci95_high": -0.03694721410680693,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "iid_static",
+    "metric": "scenario_tv",
+    "model": "structured_rollout",
+    "baseline": "structured",
+    "mean_difference": -0.0002210099046351388,
+    "ci95_low": -0.00043225925765000284,
+    "ci95_high": -2.910908733610995e-05,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "iid_static",
+    "metric": "regret",
+    "model": "structured_rollout",
+    "baseline": "structured",
+    "mean_difference": 0.0,
+    "ci95_low": 0.0,
+    "ci95_high": 0.0,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "initial_shift",
+    "metric": "scenario_tv",
+    "model": "structured_rollout",
+    "baseline": "no_feedback",
+    "mean_difference": -0.010312835181412981,
+    "ci95_low": -0.016307612488920625,
+    "ci95_high": -0.006443565433433511,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "initial_shift",
+    "metric": "regret",
+    "model": "structured_rollout",
+    "baseline": "no_feedback",
+    "mean_difference": -2.4624633789050176e-05,
+    "ci95_low": -0.0037051258228443127,
+    "ci95_high": 0.003472529438160097,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "initial_shift",
+    "metric": "scenario_tv",
+    "model": "structured_rollout",
+    "baseline": "direct",
+    "mean_difference": -0.08739989163614507,
+    "ci95_low": -0.11205392575137607,
+    "ci95_high": -0.06651027334499623,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "initial_shift",
+    "metric": "regret",
+    "model": "structured_rollout",
+    "baseline": "direct",
+    "mean_difference": -0.08645835119176794,
+    "ci95_low": -0.11198202620894822,
+    "ci95_high": -0.06124847037421334,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "initial_shift",
+    "metric": "scenario_tv",
+    "model": "structured_rollout",
+    "baseline": "dense_kernel",
+    "mean_difference": -0.008319607688218572,
+    "ci95_low": -0.010418650669406063,
+    "ci95_high": -0.006451946796621519,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "initial_shift",
+    "metric": "regret",
+    "model": "structured_rollout",
+    "baseline": "dense_kernel",
+    "mean_difference": -0.04894078063964841,
+    "ci95_low": -0.07028905730070886,
+    "ci95_high": -0.02986176013522676,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "initial_shift",
+    "metric": "scenario_tv",
+    "model": "structured_rollout",
+    "baseline": "structured",
+    "mean_difference": 0.00023666570150656342,
+    "ci95_low": 2.7659090129171105e-05,
+    "ci95_high": 0.0004582256443903373,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "initial_shift",
+    "metric": "regret",
+    "model": "structured_rollout",
+    "baseline": "structured",
+    "mean_difference": -0.0016918705692997675,
+    "ci95_low": -0.005075611707899302,
+    "ci95_high": 0.0,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "ai_switch",
+    "metric": "scenario_tv",
+    "model": "structured_rollout",
+    "baseline": "no_feedback",
+    "mean_difference": -0.00660051961632459,
+    "ci95_low": -0.008711992216101146,
+    "ci95_high": -0.004841762759801139,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "ai_switch",
+    "metric": "scenario_tv",
+    "model": "structured_rollout",
+    "baseline": "direct",
+    "mean_difference": -0.05879671155239378,
+    "ci95_low": -0.07219719627908414,
+    "ci95_high": -0.04691924483825594,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "ai_switch",
+    "metric": "scenario_tv",
+    "model": "structured_rollout",
+    "baseline": "dense_kernel",
+    "mean_difference": -0.005431192416169836,
+    "ci95_low": -0.006522335433561011,
+    "ci95_high": -0.004387578449189226,
+    "unit": "parameter scenario; training seeds averaged"
+  },
+  {
+    "split": "ai_switch",
+    "metric": "scenario_tv",
+    "model": "structured_rollout",
+    "baseline": "structured",
+    "mean_difference": -0.00023729634898032217,
+    "ci95_low": -0.00042958158123061546,
+    "ci95_high": -2.4838923130781348e-05,
+    "unit": "parameter scenario; training seeds averaged"
+  }
+]

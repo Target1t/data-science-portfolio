@@ -1,0 +1,34 @@
+{
+  "python": "3.11.5",
+  "torch": "2.7.1+cpu",
+  "numpy": "2.0.2",
+  "device": "CPU",
+  "threads": 2,
+  "run_mode": "evaluate_only",
+  "execution_seconds": 49.218693099999655,
+  "training_seconds": 74.6024733000013,
+  "reference_uncertainty": {
+    "iid_static": {
+      "max_standard_error": 0.0015697824403859272,
+      "mean_standard_error": 0.0008294685372828448
+    },
+    "initial_shift": {
+      "max_standard_error": 0.0016136481091734978,
+      "mean_standard_error": 0.0008103455918883169
+    }
+  },
+  "original_solve_sha256": "5dca56f63aa6a4ca649d1838804df06c8c5f5f8c94d20727e1a83631d3b8fb13",
+  "files": {
+    "build_report.py": "b3b465f45b522d259448cfa163492f36dfdf747f0a94841ceb89f8c6312c7b38",
+    "models.py": "2ce1d794e8e735774d1598a94dcf3fa675a1931d3bd25f6a248e2d6afa8630fd",
+    "run_experiment.py": "8532a77be6566f824d60bda822c90cb44d3e5d2a56f74f74ae4c081218248c7d",
+    "simulator.py": "e3393da0f82ee7365396171d79f77611a60ef00eb44752144a47c2dc584e62be"
+  },
+  "dataset_hashes": {
+    "test_ai_switch.npz": "9c320ab70b4cf9668069abb35fe59a0c5f16c0d68350fcac7d247d744edb6e26",
+    "test_iid_static.npz": "62e94b632fbe5cac59b05d1feb25a451090ff8855bfd0cef68f6d17c522f2bba",
+    "test_initial_shift.npz": "2ae68c184cd98eee044c79e84bb66d0aa330c64e7bc89bf2a3a10246695f3339",
+    "train.npz": "1717520c6a47c5440250df78b7917cd96e2970258dc1fb50a613b0ca03802c5b",
+    "validation.npz": "694672ac1f15d849caaad051d090e27b8ad687f8f89e5617018b00bc7629ea6b"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "contexts": 48,
+  "budgets": [
+    1,
+    4,
+    16
+  ],
+  "data_seeds": [
+    7,
+    19,
+    31
+  ],
+  "history_horizon": 12,
+  "evaluation_horizon": 60,
+  "population": 250,
+  "reference_replicates": 1024,
+  "reference_seed": 9191,
+  "context_seed": 5151,
+  "curve_stress_amplitude": 1.25,
+  "nominal_familywise_alpha": 0.05,
+  "material_harm": 0.01
+}
